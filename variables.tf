@@ -155,7 +155,7 @@ variable "identity_type" {
   default     = "SystemAssigned"
 
   validation {
-    condition     = var.identity_type == "SystemAssigned" || var.identity_type == "UserAssigned" || var.identity_type == "SystemAssigned, UserAssigned"
+    condition     = var.identity_type == "SystemAssigned" || var.identity_type == "UserAssigned" || var.identity_type == "SystemAssigned, UserAssigned" || var.identity_type == "UserAssigned, SystemAssigned"
     error_message = "`identity_type`'s possible values are `SystemAssigned`, `UserAssigned`, `SystemAssigned, UserAssigned`(to enable both)."
   }
 }
